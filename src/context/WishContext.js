@@ -75,8 +75,6 @@ export function WishProvider({ children }) {
     "Time to release the weight of 2024's challenges...",
     "Let's leave behind what no longer serves us in 2024...",
     "Closing the chapter of 2024 with grace...",
-    "Embracing fresh beginnings as we welcome 2025...",
-    "Ready to write a new story in 2025...",
     "Letting go of 2024's burdens and opening our hearts to 2025..."
   ];
 

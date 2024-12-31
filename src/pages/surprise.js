@@ -46,7 +46,7 @@ export default function Surprise() {
         acceleration: 1.05,
         friction: 0.97,
         gravity: 1.5,
-        particles: 90, // Reduced particles for mobile
+        particles: 85, // Reduced particles for mobile
         traceLength: 2,
         traceSpeed: 10,
         explosion: 6,
@@ -100,7 +100,7 @@ export default function Surprise() {
           if (fireworksRef.current) {
             fireworksRef.current.launch(1); // Launch one firework at a time
           }
-        }, 800); // Launch a new firework every 800ms
+        }, 900); // Launch a new firework every 800ms
       } else {
         fireworksRef.current.start();
       }
