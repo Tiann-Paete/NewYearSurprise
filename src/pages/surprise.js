@@ -100,7 +100,7 @@ export default function Surprise() {
           if (fireworksRef.current) {
             fireworksRef.current.launch(1); // Launch one firework at a time
           }
-        }, 900); // Launch a new firework every 800ms
+        }, 1000); // Launch a new firework every 800ms
       } else {
         fireworksRef.current.start();
       }
