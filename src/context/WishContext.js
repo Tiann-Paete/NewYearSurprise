@@ -80,6 +80,27 @@ export function WishProvider({ children }) {
     "Letting go of 2024's burdens and opening our hearts to 2025..."
   ];
 
+  const twoPersonMessages = [
+    "Who knows? 2025 might be the perfect time for these two souls to find their way to each other. Let destiny work its magic! 💫",
+    "Sometimes the best relationships start with a simple wish. May 2025 bring these two hearts closer if it's meant to be! 💕",
+    "Life has a beautiful way of bringing people together. Let's see what 2025 has in store for these two! ✨",
+    "The universe works in mysterious ways - maybe 2025 will write a beautiful story for these two hearts! 🌟"
+  ];
+
+  const hopelessMessages = [
+    "Hey there! Even if you feel nothing matters right now, 2025 might surprise you with unexpected joy and possibilities! Keep your heart open! 🌅",
+    "Sometimes when we feel lost, that's exactly when amazing changes are about to happen. Let 2025 show you new reasons to smile! ✨",
+    "Your feelings are valid, but don't close your heart to 2025's possibilities. Beautiful things happen when we least expect them! 🌟",
+    "Even if you can't see it now, 2025 holds countless opportunities for joy and meaning. Give it a chance! 💫"
+  ];
+
+  const harmfulWishMessages = [
+    "Let's transform those negative thoughts into wishes for peace and healing. May 2025 bring light to your heart! 🕊️",
+    "Instead of wishing harm, let's focus on personal growth and healing in 2025. Every soul deserves kindness! 💖",
+    "Life is precious - let's make 2025 a year of spreading love and understanding, not hurt. Your heart is capable of so much good! 🌟",
+    "May 2025 help release these heavy feelings and fill your heart with peace instead. Choose love over hatred! 🙏"
+  ];
+
   const setReceiverName = (name) => {
     const randomMessage = yearMessages[Math.floor(Math.random() * yearMessages.length)];
     setWishData(prev => ({ ...prev, receiverName: name, yearMessage: randomMessage }));
@@ -93,6 +114,18 @@ export function WishProvider({ children }) {
     };
 
     const patterns = [
+      {
+        regex: /(?:(?:si|ni)\s+)?([a-zA-Z]+)\s+(?:ug|and)\s+([a-zA-Z]+)|([a-zA-Z]+)\s*,\s*([a-zA-Z]+)/i,
+        messages: twoPersonMessages
+      },
+      {
+        regex: /\b(?:nothing|wala|pake\s+mo)\b/i,
+        messages: hopelessMessages
+      },
+      {
+        regex: /\b(?:mamatay|magabaan|maligsan|muburot|muhubag|mupangit|pangit|mopangit|death|dead|magpakamatay)\b/i,
+        messages: harmfulWishMessages
+      },
       {
         regex: /mamatay|death|dead|magpakamatay|magabaan|maga-baan/,
         messages: preventiveMessages

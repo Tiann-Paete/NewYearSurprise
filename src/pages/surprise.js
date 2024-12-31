@@ -46,7 +46,7 @@ export default function Surprise() {
         acceleration: 1.05,
         friction: 0.97,
         gravity: 1.5,
-        particles: 80, // Reduced particles for mobile
+        particles: 90, // Reduced particles for mobile
         traceLength: 2,
         traceSpeed: 10,
         explosion: 6,

@@ -81,7 +81,7 @@ const NewYearCard = ({ onClose, isVisible }) => {
           className="text-5xl font-bold text-white animate-reveal mt-4"
           style={{ fontFamily: "'Satisfy', cursive" }}
         >
-          Happy New Year, {receiverName}! 🎊
+          Happy New Year, {receiverName}! 🎆
         </h2>
         <div className="space-y-6 mt-8">
           <p 

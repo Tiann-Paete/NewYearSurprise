@@ -21,10 +21,10 @@ export default function Home() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div className="text-center space-y-2">
             <h1 className="text-2xl font-semibold text-gray-800">
-              🎉 New Year Surprise 2025 ✨
+              🎉 New Beginnings 2025 ✨
             </h1>
             <p className="text-gray-600">
-            Ready to start the new year with something special?, Enter your name to unlock your surprise!
+            Let's begin this new year with hope and inspiration. Enter your name to set your intentions for 2025!
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export default function Home() {
               type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-lg text-lg transition-colors duration-200 flex items-center justify-center gap-2"
             >
-              Reveal My Surprise 🎊
+              Let's Get Started
             </button>
           </div>
         </form>
