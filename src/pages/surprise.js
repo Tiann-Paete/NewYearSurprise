@@ -53,7 +53,7 @@ export default function Surprise() {
         flickering: 20,
         lineStyle: 'round',
         hue: { min: 0, max: 360 },
-        delay: { min: 80, max: 100 }, // Increased delay between fireworks
+        delay: { min: 80, max: 100 },
         rocketsPoint: { min: 50, max: 50 },
         lineWidth: { explosion: { min: 1, max: 3 }, trace: { min: 1, max: 2 } },
         brightness: { min: 50, max: 80 },
@@ -89,31 +89,43 @@ export default function Surprise() {
 
       // For mobile, implement controlled firing of fireworks
       if (isMobile.current) {
-        let fireworkCount = 0;
-        const maxFireworks = 12; // Limit total number of fireworks on mobile
-        const fireworkInterval = setInterval(() => {
-          if (fireworkCount < maxFireworks) {
+        // Clear any existing interval
+        if (fireworkIntervalRef.current) {
+          clearInterval(fireworkIntervalRef.current);
+        }
+
+        // Start new interval for continuous firing
+        fireworkIntervalRef.current = setInterval(() => {
+          if (fireworksRef.current) {
             fireworksRef.current.launch(1); // Launch one firework at a time
-            fireworkCount++;
-          } else {
-            clearInterval(fireworkInterval);
           }
         }, 800); // Launch a new firework every 800ms
-
-        // Clean up interval
-        return () => clearInterval(fireworkInterval);
       } else {
         fireworksRef.current.start();
       }
     }
 
     return () => {
+      if (fireworkIntervalRef.current) {
+        clearInterval(fireworkIntervalRef.current);
+        fireworkIntervalRef.current = null;
+      }
       if (fireworksRef.current) {
         fireworksRef.current.stop();
         fireworksRef.current = null;
       }
     };
   }, [showFireworks]);
+
+  // Additional cleanup on component unmount
+  useEffect(() => {
+    return () => {
+      if (fireworkIntervalRef.current) {
+        clearInterval(fireworkIntervalRef.current);
+        fireworkIntervalRef.current = null;
+      }
+    };
+  }, []);
 
   const handlePaperClick = () => {
     setShowPaper(true);
