@@ -29,7 +29,9 @@ const NewYearCard = ({ onClose, isVisible }) => {
     janna: 'janna',
     mica: 'mica',
     'loren may': 'loren',
+    'loren': 'loren',
     glenndely: 'glenn',
+    glenn: 'glenn',
     riya: 'riya',
     askia: 'askia',
     rj: 'rj',
@@ -79,7 +81,7 @@ const NewYearCard = ({ onClose, isVisible }) => {
         </span>
         <h2 
           className="text-5xl font-bold text-white animate-reveal mt-4"
-          style={{ fontFamily: "'Satisfy', cursive" }}
+          style={{ fontFamily: "'Berkshire Swash', static" }}
         >
           Happy New Year, {receiverName}! 🎆
         </h2>
