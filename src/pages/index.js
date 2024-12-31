@@ -24,7 +24,7 @@ export default function Home() {
               🎉 New Year Surprise 2025 ✨
             </h1>
             <p className="text-gray-600">
-              I've got a little surprise for you this New Year, Enter your name to unlock your surprise!
+            Ready to start the new year with something special?, Enter your name to unlock your surprise!
             </p>
           </div>
 

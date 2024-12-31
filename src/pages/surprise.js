@@ -20,6 +20,7 @@ export default function Surprise() {
   const containerRef = useRef(null);
   const fireworksRef = useRef(null);
   const isMobile = useRef(false);
+  const fireworkIntervalRef = useRef(null);
 
   const stars = useMemo(() =>
     Array.from({ length: 100 }).map((_, index) => ({
