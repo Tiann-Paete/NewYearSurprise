@@ -49,8 +49,8 @@ export default function Surprise() {
         particles: 80, // Reduced particles for mobile
         traceLength: 2,
         traceSpeed: 10,
-        explosion: 6,
-        intensity: 10, // Reduced intensity for mobile
+        explosion: 5,
+        intensity: 9, // Reduced intensity for mobile
         flickering: 20,
         lineStyle: 'round',
         hue: { min: 0, max: 360 },
