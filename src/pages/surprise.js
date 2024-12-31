@@ -19,6 +19,7 @@ export default function Surprise() {
   const router = useRouter();
   const containerRef = useRef(null);
   const fireworksRef = useRef(null);
+  const isMobile = useRef(false);
 
   const stars = useMemo(() =>
     Array.from({ length: 100 }).map((_, index) => ({
@@ -33,8 +34,34 @@ export default function Surprise() {
   );
 
   useEffect(() => {
+    isMobile.current = window.innerWidth < 768;
+  }, []);
+
+  useEffect(() => {
     if (showFireworks && containerRef.current && !fireworksRef.current) {
-      fireworksRef.current = new Fireworks(containerRef.current, {
+      const mobileConfig = {
+        autoresize: true,
+        opacity: 0.8,
+        acceleration: 1.05,
+        friction: 0.97,
+        gravity: 1.5,
+        particles: 50, // Reduced particles for mobile
+        traceLength: 2,
+        traceSpeed: 10,
+        explosion: 5,
+        intensity: 8, // Reduced intensity for mobile
+        flickering: 20,
+        lineStyle: 'round',
+        hue: { min: 0, max: 360 },
+        delay: { min: 80, max: 100 }, // Increased delay between fireworks
+        rocketsPoint: { min: 50, max: 50 },
+        lineWidth: { explosion: { min: 1, max: 3 }, trace: { min: 1, max: 2 } },
+        brightness: { min: 50, max: 80 },
+        decay: { min: 0.015, max: 0.025 },
+        mouse: { click: false, move: false, max: 1 }
+      };
+
+      const desktopConfig = {
         autoresize: true,
         opacity: 0.8,
         acceleration: 1.02,
@@ -54,9 +81,30 @@ export default function Surprise() {
         brightness: { min: 60, max: 90 },
         decay: { min: 0.01, max: 0.02 },
         mouse: { click: true, move: false, max: 1 }
-      });
+      };
 
-      fireworksRef.current.start();
+      fireworksRef.current = new Fireworks(containerRef.current, 
+        isMobile.current ? mobileConfig : desktopConfig
+      );
+
+      // For mobile, implement controlled firing of fireworks
+      if (isMobile.current) {
+        let fireworkCount = 0;
+        const maxFireworks = 12; // Limit total number of fireworks on mobile
+        const fireworkInterval = setInterval(() => {
+          if (fireworkCount < maxFireworks) {
+            fireworksRef.current.launch(1); // Launch one firework at a time
+            fireworkCount++;
+          } else {
+            clearInterval(fireworkInterval);
+          }
+        }, 800); // Launch a new firework every 800ms
+
+        // Clean up interval
+        return () => clearInterval(fireworkInterval);
+      } else {
+        fireworksRef.current.start();
+      }
     }
 
     return () => {
