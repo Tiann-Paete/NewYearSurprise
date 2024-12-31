@@ -146,7 +146,7 @@ export function WishProvider({ children }) {
         messages: materialWishMessages
       },
       {
-        regex: /magkadayon|crush|notice|love\s+ba\s+ni|know\s+each\s+other/,
+        regex: /crush|notice|love\s+ba\s+ni|know\s+each\s+other/,
         messages: crushMessages
       },
       {
