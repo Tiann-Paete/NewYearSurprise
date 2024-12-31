@@ -50,7 +50,7 @@ export default function Surprise() {
         traceLength: 2,
         traceSpeed: 10,
         explosion: 5,
-        intensity: 9, // Reduced intensity for mobile
+        intensity: 7, // Reduced intensity for mobile
         flickering: 20,
         lineStyle: 'round',
         hue: { min: 0, max: 360 },
@@ -98,7 +98,7 @@ export default function Surprise() {
         // Start new interval for continuous firing
         fireworkIntervalRef.current = setInterval(() => {
           if (fireworksRef.current) {
-            fireworksRef.current.launch(2); // Launch one firework at a time
+            fireworksRef.current.launch(1); // Launch one firework at a time
           }
         }, 800); // Launch a new firework every 800ms
       } else {
