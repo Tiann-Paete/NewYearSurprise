@@ -58,7 +58,7 @@ export default function Surprise() {
         rocketsPoint: { min: 50, max: 50 },
         lineWidth: { explosion: { min: 1, max: 3 }, trace: { min: 1, max: 2 } },
         brightness: { min: 50, max: 80 },
-        decay: { min: 0.015, max: 0.025 },
+        decay: { min: 0.010, max: 0.025 },
         mouse: { click: false, move: false, max: 1 }
       };
 
