@@ -46,7 +46,7 @@ export default function Surprise() {
         acceleration: 1.05,
         friction: 0.97,
         gravity: 1.5,
-        particles: 85, // Reduced particles for mobile
+        particles: 90, // Reduced particles for mobile
         traceLength: 2,
         traceSpeed: 10,
         explosion: 6,
@@ -54,7 +54,7 @@ export default function Surprise() {
         flickering: 20,
         lineStyle: 'round',
         hue: { min: 0, max: 360 },
-        delay: { min: 80, max: 100 },
+        delay: { min: 30, max: 60 },
         rocketsPoint: { min: 50, max: 50 },
         lineWidth: { explosion: { min: 1, max: 3 }, trace: { min: 1, max: 2 } },
         brightness: { min: 50, max: 80 },
