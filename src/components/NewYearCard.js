@@ -167,7 +167,7 @@ const NewYearCard = ({ onClose, isVisible }) => {
                   className="text-2xl font-bold text-white animate-reveal"
                   style={{ fontFamily: "'Berkshire Swash', static" }}
                 >
-                  Happy New Year, {receiverName}! 🎊
+                  Happy New Year, {receiverName}! 🎆
                 </h2>
                 <p 
                   className="text-base text-gray-200 animate-reveal delay-500"
@@ -232,7 +232,7 @@ const NewYearCard = ({ onClose, isVisible }) => {
                     className="text-4xl font-bold text-white animate-reveal"
                     style={{ fontFamily: "'Berkshire Swash', static" }}
                   >
-                    Happy New Year, {receiverName}! 🎊
+                    Happy New Year, {receiverName}! 🎆
                   </h2>
                   <p 
                     className="text-xl text-gray-200 animate-reveal delay-500"
